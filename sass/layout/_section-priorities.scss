@@ -1,0 +1,99 @@
+.section-priorities {
+    padding-top: 60px;
+    padding-bottom: 60px;
+
+    &__title {
+        font-weight: 700;
+        font-size: 28px;
+        line-height: 1.18;
+        text-align: center;
+        letter-spacing: 0.03em;
+        color: var(--primery-text-color);
+    
+        &--visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            padding: 0;
+            overflow: hidden;
+            border: 0;
+            clip: rect(0 0 0 0);
+        }
+    }
+    .item:not(:last-child) {
+        margin-bottom: 30px;
+    }
+    &__subtitle {
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 1.14;
+        text-align: center;
+        text-transform: uppercase;
+        margin-top: 0px;
+        margin-bottom: 10px;
+    }
+    .background-icon {
+        display: flex;
+        height: 120px;
+        background-color: var(--background-team-color);
+        margin-bottom: 30px;
+        justify-content: center;
+        align-items: center;
+    }
+    &__icon {
+        display: flex;
+        width: 70px;
+        height: 70px;
+    }
+    &__text {
+        color: var(--parahraf-text-color);
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 1.71;
+    }
+}
+
+// width 768+
+@media screen and (min-width: 768px) {
+    .section-priorities {
+        
+        .list {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .item {
+            display: flex;
+            width: 354px;
+            
+            &:not(:last-child) {
+                margin-bottom: 0;
+            }
+            &:nth-child(2n+1) {
+                margin-right: 30px;
+            }
+            &:nth-child(-n + 2) {
+                margin-bottom: 30px;
+            }
+        }
+    }
+}
+
+// width 1200+
+@media screen and (min-width: 1200px) {
+    .section-priorities {
+        padding-top: 94px;
+        padding-bottom: 94px;
+
+        .item {
+            width: 270px;
+        
+            &:nth-child(-n + 2) {
+                margin-bottom: 0;
+            }
+            &:not(:last-child) {
+                margin-right: 30px;
+            }
+        }
+    }
+}

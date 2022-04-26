@@ -1,0 +1,276 @@
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    background-color: rgba(0, 0, 0, 0.2);
+    transition: 250ms var(--timing-function);
+
+    &.is-hidden {
+        visibility: hidden;
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .modal {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 450px;
+        height: 609px;
+        padding: 40px;
+        border-radius: 4px;
+        background-color: #fff;
+        box-shadow: 0 2px 1px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(0, 0, 0, 0.14),
+            0 1px 3px rgba(0, 0, 0, 0.12);
+    }
+
+    .close {
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translate(-8px, 8px);
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &:hover .backdrop__cross,
+        &:focus .backdrop__cross {
+            fill: var(--accent-color);
+        }
+    }
+
+    &__cross {
+        width: 11px;
+        height: 11px;
+        transition: 250ms var(--timing-function);
+    }
+
+    &__title {
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 1.5;
+        text-align: center;
+        margin-top: 0px;
+        margin-bottom: 12px;
+    }
+
+    .form {
+        position: relative;
+        transition: 250ms var(--timing-function);
+    }
+
+    &__input {
+        padding: 12px 12px 12px 42px;
+        font-family: inherit;
+        width: 448px;
+        height: 40px;
+        border: 1px solid rgba(33, 33, 33, 0.2);
+        border-radius: 4px;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 1.17;
+        letter-spacing: 0.01em;
+        transition: 250ms var(--timing-function);
+
+        .label:hover &,
+        .label:focus & {
+            border: 1px solid var(--accent-color);
+            cursor: pointer;
+        }
+    }
+
+    .label {
+        display: flex;
+        flex-direction: column;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 1.17;
+        letter-spacing: 0.01em;
+        color: var(--parahraf-text-color);
+        margin-bottom: 10px;
+        position: relative;
+        transition: 250ms var(--timing-function);
+    }
+
+    .comment {
+        margin-bottom: 20px;
+    }
+
+    &__comment {
+        padding: 12px 16px;
+        max-width: 448px;
+        height: 120px;
+        border: 1px solid rgba(33, 33, 33, 0.2);
+        border-radius: 4px;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 1.17;
+        letter-spacing: 0.01em;
+        color: rgba(117, 117, 117, 0.5);
+        background-color: #fff;
+        text-align: left;
+        display: flex;
+        vertical-align: top;
+        resize: none;
+        transition: 250ms var(--timing-function);
+
+        .label:hover &,
+        .label:focus & {
+            border: 1px solid var(--accent-color);
+            cursor: pointer;
+            fill: var(--accent-color);
+        }
+
+        &::placeholder {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 1.14;
+            letter-spacing: 0.01em;
+            color: rgba(117, 117, 117, 0.5);
+        }
+    }
+
+    &__text {
+        margin-bottom: 4px;
+    }
+
+    .div {
+        display: flex;
+        position: relative;
+    }
+
+    &__icon {
+        top: 50%;
+        left: 12px;
+        transform: translateY(-50%);
+        width: 18px;
+        height: 18px;
+        position: absolute;
+
+        .label:focus-within & {
+            fill: var(--accent-color);
+        }
+
+        label:hover & {
+            fill: var(--accent-color);
+        }
+    }
+
+    .check {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 1.71;
+        letter-spacing: 0.03em;
+        cursor: pointer;
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__checkbox,
+    &__check--icon {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        border: 0;
+        padding: 0;
+        clip: rect(0 0 0 0);
+        overflow: hidden;
+    }
+
+    &__checkbox:checked+&__check--empty {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        border: 0;
+        padding: 0;
+        clip: rect(0 0 0 0);
+        overflow: hidden;
+    }
+
+    &__check--empty {
+        width: 16px;
+        height: 15px;
+        margin-right: 6px;
+    }
+
+    &__checkbox:checked~&__check--icon {
+        position: static;
+        width: 16px;
+        height: 15px;
+        overflow: visible;
+        margin-right: 7px;
+        clip: auto;
+    }
+
+    &__consent {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 1.17;
+        letter-spacing: 0.03em;
+        color: var(--parahraf-text-color);
+        margin-right: 5px;
+    }
+
+    &__contract {
+        color: var(--accent-color);
+        text-decoration: underline;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 1.17;
+        letter-spacing: 0.03em;
+    }
+
+    .button--check {
+        display: block;
+        padding: 10px 55px;
+        margin: auto;
+        margin-top: 30px;
+    }
+}
+
+// width 1200+
+@media screen and (min-width: 1200px) {
+    .backdrop {
+        .modal {
+            width: 528px;
+            height: 581px;
+        }
+        &__title {            
+            line-height: 1.17;
+        }
+        &__consent {
+            font-size: 14px;
+            line-height: 1.71;
+        }
+        &__contract {
+            font-size: 14px;
+            line-height: 1.71;
+        }
+    }
+}
+
+// .modal {
+//     position: absolute;
+//     top: 50%;
+//     left: 50%;
+//     transform: translate(-50%, -50%);
+//     width: 528px;
+//     height: 581px;
+//     padding: 40px;
+//     border-radius: 4px;
+//     background-color: #fff;
+//     box-shadow: 0 2px 1px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(0, 0, 0, 0.14),
+//         0 1px 3px rgba(0, 0, 0, 0.12);
+// }
