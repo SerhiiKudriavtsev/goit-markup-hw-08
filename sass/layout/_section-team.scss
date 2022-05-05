@@ -24,9 +24,18 @@
     }
     &__img {
         margin-bottom: 30px;
-        &>img {
-            width: 100%;
-        }
+        // max-width: 450px;
+        // height: auto;
+        
+        // &>img {
+        //     max-width: 450px;
+        //     height: auto;
+        // }
+    }
+    .picture-img {
+        max-width: 100%;
+        height: auto;
+
     }
     &__subtitle {
         font-weight: 500;

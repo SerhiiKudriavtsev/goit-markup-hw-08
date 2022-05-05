@@ -1118,8 +1118,9 @@ label:hover .backdrop__icon {
   margin-bottom: 30px;
 }
 
-.section-team__img > img {
-  width: 100%;
+.section-team .picture-img {
+  max-width: 100%;
+  height: auto;
 }
 
 .section-team__subtitle {
