@@ -1,5 +1,4 @@
 .cards {
-    padding-bottom: 60px;
     .card {
         background: var(--background-color);
         transition: 250ms var(--timing-function);
@@ -32,7 +31,7 @@
         text-align: left;
         margin-bottom: 4px;
     }
-    &____paragraph {
+    &__paragraph {
         font-size: 16px;
         line-height: 1.88;
         margin-bottom: 0px;
@@ -86,15 +85,20 @@
 // width 1200+
 @media screen and (min-width: 1200px) {
     .cards {
-        padding-bottom: 94px;
         .card:first-child .card-caption {
             padding-bottom: 20px;
+        }
+        .card:not(:last-child) {
+            margin-bottom: 0;
         }
         .card:nth-child(2n+1) {
             margin-right: 0;
         }
         .card:not(:nth-child(3n)) {
             margin-right: 30px;
+        }
+        .card:nth-child(-n + 6) {
+            padding-bottom: 30px;
         }
         .image,
         .card-caption {

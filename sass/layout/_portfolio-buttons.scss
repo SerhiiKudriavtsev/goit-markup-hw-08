@@ -1,6 +1,9 @@
-.buttons {
+.portfolio {
     padding-top: 60px;
-    padding-bottom: 40px;
+    padding-bottom: 60px;
+}
+.buttons {
+    margin-bottom: 40px;
     display: flex;
     flex-wrap: wrap;
 
@@ -36,7 +39,6 @@
 @media screen and (min-width: 768px) {
     .buttons {
         justify-content: center;
-        padding-bottom: 30px;
         
         .item:nth-child(-n+3) {
             margin-bottom: 0;
@@ -45,8 +47,8 @@
 }
 
 @media screen and (min-width: 1200px) {
-    .buttons {
+    .portfolio {
         padding-top: 94px;
-        padding-bottom: 50px;
+        padding-bottom: 94px;
     }
 }

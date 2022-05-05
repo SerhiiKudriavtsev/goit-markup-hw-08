@@ -158,12 +158,10 @@
 
 @media screen and (min-width: 768px) {
     .footer {
-        .container {
-            padding-left: 72px;
-        }
-        
+                
         .footer-tablet {
             display: flex;
+            justify-content: center;
         }
         .contacts {
             margin-right: 165px;
@@ -183,7 +181,7 @@
     .footer {
         .container {
             display: flex;
-            padding-left: 15px;
+        
         }
 
         .logo-div {
